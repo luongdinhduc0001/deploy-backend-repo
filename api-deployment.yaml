@@ -21,10 +21,10 @@ spec:
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: "/uploads"
-              name: pvc-46b7ac13-ae8b-4474-a3d9-7b30d02671ee
+              name: pvc
       imagePullSecrets:
         - name: idcregcred1
       volumes:
-        - name: pvc-46b7ac13-ae8b-4474-a3d9-7b30d02671ee
+        - name: pvc
           persistentVolumeClaim:
             claimName: my-pvc
