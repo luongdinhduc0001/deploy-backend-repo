@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: registry.viettelidc.com.vn/public-repo-1-f8846321-2078-4c6f-a30e-f103737b545f/myappbackend:v1.0.4
+          image: registry.viettelidc.com.vn/public-repo-1-f8846321-2078-4c6f-a30e-f103737b545f/myappbackend:v1.0.5
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
