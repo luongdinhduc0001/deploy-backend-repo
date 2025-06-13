@@ -23,7 +23,7 @@ spec:
             - mountPath: "/uploads"
               name: pvc
       imagePullSecrets:
-        - name: idcregcred1
+        - name: idcregcred2
       volumes:
         - name: pvc
           persistentVolumeClaim:
