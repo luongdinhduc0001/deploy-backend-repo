@@ -15,14 +15,14 @@ spec:
     spec:
       containers:
         - name: api
-          image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.0.6
+          image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.0.7
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: "/uploads"
               name: pvc
-          resources:            # ✅ Đúng: đặt bên trong container
+          resources: # ✅ Đúng: đặt bên trong container
             requests:
               cpu: 100m
               memory: 128Mi
