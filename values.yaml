@@ -1,5 +1,5 @@
 api:
-  image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.0.12
+  image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.1.0
   replicas: 3
   resources:
     requests:
