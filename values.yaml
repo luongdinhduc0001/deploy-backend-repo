@@ -11,3 +11,8 @@ api:
   pvc: my-pvc
   imagePullSecrets:
     - idcregcred2
+
+ingress:
+  host: ducld12321.id.vn
+  className: nginx-class
+  tlsSecret: app-tls-secret
