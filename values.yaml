@@ -1,0 +1,13 @@
+api:
+  image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.0.8
+  replicas: 3
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  pvc: my-pvc
+  imagePullSecrets:
+    - idcregcred2
