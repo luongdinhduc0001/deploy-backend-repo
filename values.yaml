@@ -1,5 +1,5 @@
 api:
-  image: ldd0000/myappbackend:v3.0.0
+  image: ldd000/myappbackend:v3.0.0
   replicas: 1
   resources:
     requests:
