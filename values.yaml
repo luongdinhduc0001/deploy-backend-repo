@@ -1,6 +1,6 @@
 api:
   image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.2.2
-  replicas: 1
+  replicas: 2
   resources:
     requests:
       cpu: 100m
