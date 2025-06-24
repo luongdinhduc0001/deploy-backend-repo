@@ -1,5 +1,5 @@
 api:
-  image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.2.4
+  image: registry.viettelidc.com.vn/private-repo-59e04ede-2f49-4678-99d7-cf90624091fb/myappbackend:v1.2.5
   replicas: 2
   resources:
     requests:
@@ -15,4 +15,4 @@ ingress:
   host: ducld12321.id.vn
   className: nginx-class
   tlsSecret: app-tls-secret
-version: v1.2.4
+version: v1.2.5
