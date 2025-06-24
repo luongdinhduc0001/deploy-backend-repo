@@ -15,4 +15,3 @@ ingress:
   host: ducld12321.id.vn
   className: nginx-class
   tlsSecret: app-tls-secret
-version: v1.2.8
