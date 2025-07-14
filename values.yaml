@@ -1,3 +1,5 @@
+namespace: kong
+
 api:
   image: ldd000/myappbackend:v1.2
   replicas: 2
@@ -11,6 +13,10 @@ api:
   pvc: my-pvc
   imagePullSecrets:
     - dockerhub-secret
+
+service:
+  port: 80
+  targetPort: 5000
 
 ingress:
   enabled: true

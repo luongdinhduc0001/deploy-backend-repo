@@ -3,6 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kong-to-api-service-ingress
+  namespace: {{ .Values.namespace }}
   annotations:
     {{- range $key, $val := .Values.ingress.annotations }}
     {{ $key }}: {{ $val | quote }}
