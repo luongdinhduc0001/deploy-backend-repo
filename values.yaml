@@ -19,5 +19,8 @@ ingress:
   path: /backend
   pathType: Prefix
   tlsSecret: app-tls-secret
+  service:
+    name: myappbackend
+    port: 80
   annotations:
     konghq.com/strip-path: "true"
