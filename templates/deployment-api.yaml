@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: {{ .Values.api.name }}
   namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.api.replicas }}
   selector:
     matchLabels:
-      app: api
+      app: {{ .Values.api.selector.app }}
   template:
     metadata:
       labels:
         app: api
     spec:
       containers:
-        - name: api
+        - name: {{ .Values.api.container.name }}
           image: {{ .Values.api.image }}
           ports:
-            - containerPort: 5000
+            - containerPort: {{ .Values.api.container.port }}
           resources:
             {{- toYaml .Values.api.resources | nindent 12 }}
           volumeMounts:
