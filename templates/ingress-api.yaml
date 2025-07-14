@@ -1,24 +1,28 @@
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: api-ingress
-#   annotations:
-#     nginx.ingress.kubernetes.io/rewrite-target: /$2
-#     cert-manager.io/cluster-issuer: letsencrypt-prod
-# spec:
-#   ingressClassName: {{ .Values.ingress.className }}
-#   tls:
-#     - hosts:
-#         - {{ .Values.ingress.host }}
-#       secretName: {{ .Values.ingress.tlsSecret }}
-#   rules:
-#     - host: {{ .Values.ingress.host }}
-#       http:
-#         paths:
-#           - path: /backend(/|$)(.*)
-#             pathType: ImplementationSpecific
-#             backend:
-#               service:
-#                 name: api-service
-#                 port:
-#                   number: 80
+{{- if .Values.api.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kong-to-api-service-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    konghq.com/strip-path: "true"
+spec:
+  ingressClassName: {{ .Values.api.ingress.className | quote }}
+  {{- if .Values.api.ingress.tlsSecret }}
+  tls:
+    - hosts:
+        - {{ .Values.api.ingress.host }}
+      secretName: {{ .Values.api.ingress.tlsSecret }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.api.ingress.host }}
+      http:
+        paths:
+          - path: /backend
+            pathType: Prefix
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 80
+{{- end }}
