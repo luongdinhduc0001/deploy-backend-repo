@@ -1,6 +1,12 @@
 namespace: kong
 
 api:
+  name: api-deployment
+  selector:
+    app: api
+  container:
+    name: api
+    port: 5000
   image: ldd000/myappbackend:v1.2
   replicas: 2
   resources:
@@ -15,10 +21,12 @@ api:
     - dockerhub-secret
 
 service:
+  name: api-service
   port: 80
   targetPort: 5000
 
 ingress:
+  name: kong-to-api-service-ingress
   enabled: true
   className: kong
   host: ducld12321.id.vn
