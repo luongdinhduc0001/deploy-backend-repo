@@ -1,5 +1,4 @@
 namespace: kong
-
 api:
   name: api-deployment
   selector:
@@ -7,7 +6,7 @@ api:
   container:
     name: api
     port: 5000
-  image: ldd000/myappbackend:v1.2
+  image: myappbackend:v1.5
   replicas: 2
   resources:
     requests:
@@ -19,12 +18,10 @@ api:
   pvc: my-pvc
   imagePullSecrets:
     - dockerhub-secret
-
 service:
   name: api-service
   port: 80
   targetPort: 5000
-
 ingress:
   name: kong-to-api-service-ingress
   enabled: true
