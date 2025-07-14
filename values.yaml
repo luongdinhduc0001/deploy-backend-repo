@@ -6,7 +6,7 @@ api:
   container:
     name: api
     port: 5000
-  image: myappbackend:v1.5
+  image: ldd000/myappbackend:v1.5
   replicas: 2
   resources:
     requests:
