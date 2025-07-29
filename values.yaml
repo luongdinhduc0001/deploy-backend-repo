@@ -15,7 +15,7 @@ api:
     limits:
       cpu: 200m
       memory: 256Mi
-  pvc: my-pvc
+  pvc: myclaim
   imagePullSecrets:
     - dockerhub-secret
 service:
